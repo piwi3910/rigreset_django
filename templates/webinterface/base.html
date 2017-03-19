@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rigreset</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="{% static 'webinterface/style.css'%}" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+
+       <!-- Header -->
+        <div class="navbar-header">
+           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#topNavBar">
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+           </button>
+           <a class="navbar-brand" href="{% url 'webinterface:index' %}">Rigreset</a>
+        </div>
+        <!-- Items -->
+        <div class="collapse navbar-collapse" id="topNavBar">
+            <ul class="nav navbar-nav">
+                <li class="">
+                    <a href="#">
+                        <span class="glyphicon glyphicon-list" aria-hidden="true"></span> Hosts
+                    </a>
+                </li>
+                <li class="">
+                    <a href="#">
+                        <span class="glyphicon glyphicon-list" aria-hidden="true"></span> Groups
+                    </a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+               <li class="">
+                    <a href="#">
+                        <span class="glyphicon glyphicon-list" aria-hidden="true"></span> Manage
+                    </a>
+                </li>
+                <li class="">
+                    <a href="#">
+                        <span aria-hidden="true"></span> Profile
+                    </a>
+                </li>
+                <li class="">
+                    <a href="#">
+                        <span aria-hidden="true"></span> Help
+                    </a>
+                </li>
+                <li class="">
+                    <a href="#">
+                        <span class="glyphicon glyphicon-off" aria-hidden="true"></span> Logout
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+
+    </div>
+</nav>
+{% block body %}
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,13 @@
+{% extends 'webinterface/base.html' %}
+
+{% block body %}
+    {% if all_groups %}
+    <ul>
+        {% for group in all_groups %}
+        <li><a href="#"> {{ group.group_name }}</a></li>
+        {% endfor %}
+    </ul>
+    {% else %}
+        <h2>no groups found!</h2>
+    {% endif %}
+{% endblock %}
