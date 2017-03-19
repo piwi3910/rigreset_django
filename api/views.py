@@ -10,8 +10,8 @@ from .serializers import MinsersSerializer
 class MinersList(APIView):
 
     def get(self, request):
-        Miners.objects.all()
-        serializer = MinsersSerializer(Miners, many=True)
+        queryset = Miners.objects.all()
+        serializer = MinsersSerializer(queryset, many=True)
         return Response(serializer.data)
 
     def post(self):

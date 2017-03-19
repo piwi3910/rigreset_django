@@ -6,4 +6,4 @@ class MinsersSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Miners
-        fields = '__all__'
+        fields = ('name', 'ip')

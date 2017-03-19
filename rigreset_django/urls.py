@@ -15,12 +15,12 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-from rest_framework.urlpatterns import format_suffix_patterns
-from api import views
+
+
 
 urlpatterns = [
     url(r'^webinterface/', include('webinterface.urls', namespace="webinterface")),
     url(r'^admin/', admin.site.urls),
-    url(r'^miners/', views.MinersList.as_view()),
+    url(r'^api/', include('api.urls', namespace="api")),
 ]
-urlpatterns = format_suffix_patterns(urlpatterns)
+
