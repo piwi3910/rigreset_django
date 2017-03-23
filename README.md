@@ -21,3 +21,11 @@ needed python3
 pip3 -r requirements.txt
 
 python3 manage.py runserver
+
+/webinterface : webgui
+/api/miners : miner list
+/admin : admin interface
+
+default user and password for the admin gui
+admin password1234!
+
