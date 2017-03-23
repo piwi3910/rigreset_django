@@ -3,26 +3,25 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from .models import Miners, Heartbeat
-from .serializers import MinsersSerializer, HeartbeatSerializer
+from .serializers import MinersSerializer, HeartbeatSerializer
 
 
 # List all miners or create a new one
 class MinersList(APIView):
     def get(self, request):
         queryset = Miners.objects.all()
-        serializer = MinsersSerializer(queryset, many=True)
+        serializer = MinersSerializer(queryset, many=True)
         return Response(serializer.data)
-
-    def post(self):
-        pass
 
 
 class HeartbeatList(APIView):
-    def get(self):
-        pass
+    def get(self,request):
+        queryset = Heartbeat.objects.all()
+        serializer = HeartbeatSerializer(queryset, many=True)
+        return Response(serializer.data)
 
     def post(self, request):
-        serializer = HeartbeatSerializer(Heartbeat, data=request.data)
+        serializer = HeartbeatSerializer(Heartbeat, data=request.data, many=True)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)

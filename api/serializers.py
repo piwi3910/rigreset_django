@@ -2,13 +2,13 @@ from rest_framework import serializers
 from .models import Miners, Heartbeat
 
 
-class MinsersSerializer(serializers.ModelSerializer):
+class MinersSerializer(serializers.ModelSerializer):
     class Meta:
         model = Miners
-        fields = ('name', 'ip')
+        fields = ('id', 'name', 'ip', 'status')
 
 
 class HeartbeatSerializer(serializers.ModelSerializer):
     class Meta:
         model = Heartbeat
-        fields = ('name', 'time')
+        fields = ('id', 'time')

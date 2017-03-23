@@ -1,5 +1,5 @@
 import django.shortcuts
-from api.models import Miners
+from api.models import Miners, Heartbeat
 
 
 def index(request):
