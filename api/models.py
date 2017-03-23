@@ -8,6 +8,7 @@ class Miners(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=16)
     ip = models.CharField(max_length=16)
+    status = models.CharField(max_length=1, default=1, editable=False)
 
     def __str__(self):
         return self.name

@@ -3,20 +3,33 @@
 {% block minerlist %}
     {% if all_miners %}
         {% for miner in all_miners %}
-        <tr class="success">
-						<td>
-							{{ miner.name }}
-						</td>
-						<td>
-							{{ miner.id }}
-						</td>
-                        <td>
-							01/04/2012 - todo
-						</td>
-						<td>
-							OK - todo
-						</td>
-					</tr>
+            {% if miner.status == "1" %}
+                <tr class="success">
+            {% elif miner.status == "2" %}
+                <tr class="warning">
+            {% elif miner.status == "3" %}
+                <tr class="danger">
+            {% endif %}
+                    <td>
+                        {{ miner.name }}
+                    </td>
+                    <td>
+                        {{ miner.id }}
+                    </td>
+                    <td>
+                        01/04/2012 - todo
+                    </td>
+                    <td>
+                        {% if miner.status == "1" %}
+                            OK
+                        {% elif miner.status == "2" %}
+                            Warning
+                        {% elif miner.status == "3" %}
+                            Down
+                        {% endif %}
+                    </td>
+                </tr>
+
         {% endfor %}
     {% else %}
         <h2>no miners found found!</h2>
