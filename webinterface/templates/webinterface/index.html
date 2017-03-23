@@ -1,13 +1,21 @@
 {% extends 'webinterface/base.html' %}
 
-{% block body %}
-    {% if all_groups %}
-    <ul>
-        {% for group in all_groups %}
-        <li><a href="#"> {{ group.group_name }}</a></li>
+{% block minerlist %}
+    {% if all_miners %}
+        {% for miner in all_miners %}
+        <tr class="success">
+						<td>
+							{{ miner.name }}
+						</td>
+						<td>
+							01/04/2012 - todo
+						</td>
+						<td>
+							OK - todo
+						</td>
+					</tr>
         {% endfor %}
-    </ul>
     {% else %}
-        <h2>no groups found!</h2>
+        <h2>no miners found found!</h2>
     {% endif %}
 {% endblock %}
