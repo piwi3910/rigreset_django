@@ -9,8 +9,6 @@
                 <tr class="warning">
             {% elif miner.status|stringformat:"s" == "Down" %}
                 <tr class="danger">
-             {% else  %}
-                <tr> NO CLASS FOUND
             {% endif %}
                     <td>
                         {{ miner.name }}
@@ -22,7 +20,7 @@
                         {{ miner.id }}
                     </td>
                     <td>
-                        TO DO
+                        {{ heartbeat.time }}
                     </td>
                     <td>
                         {{ miner.status }}

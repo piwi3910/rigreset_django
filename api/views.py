@@ -6,6 +6,7 @@ from .models import Miners, Heartbeat, test
 from .serializers import MinersSerializer, HeartbeatSerializer, testSerializer
 
 
+
 # List all miners or create a new one
 class MinersList(APIView):
     def get(self, request):
