@@ -3,11 +3,11 @@
 {% block minerlist %}
     {% if all_miners %}
         {% for miner in all_miners %}
-            {% if miner.status == 'OK' %}
+            {% if miner.status|stringformat:"s" == "OK" %}
                 <tr class="success">
-            {% elif miner.status == "Warning" %}
+            {% elif miner.status|stringformat:"s" == "Warning" %}
                 <tr class="warning">
-            {% elif miner.status == "Down" %}
+            {% elif miner.status|stringformat:"s" == "Down" %}
                 <tr class="danger">
              {% else  %}
                 <tr> NO CLASS FOUND
