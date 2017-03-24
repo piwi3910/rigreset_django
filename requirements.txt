@@ -4,4 +4,6 @@ markdown
 django-filter
 django-bootstrap3
 uuid
+celery
+flower
 

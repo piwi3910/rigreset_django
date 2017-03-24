@@ -3,12 +3,14 @@
 {% block minerlist %}
     {% if all_miners %}
         {% for miner in all_miners %}
-            {% if miner.status == "1" %}
+            {% if miner.status == 'OK' %}
                 <tr class="success">
-            {% elif miner.status == "2" %}
+            {% elif miner.status == "Warning" %}
                 <tr class="warning">
-            {% elif miner.status == "3" %}
+            {% elif miner.status == "Down" %}
                 <tr class="danger">
+             {% else  %}
+                <tr> NO CLASS FOUND
             {% endif %}
                     <td>
                         {{ miner.name }}
@@ -23,13 +25,7 @@
                         TO DO
                     </td>
                     <td>
-                        {% if miner.status == "1" %}
-                            OK
-                        {% elif miner.status == "2" %}
-                            Warning
-                        {% elif miner.status == "3" %}
-                            Down
-                        {% endif %}
+                        {{ miner.status }}
                     </td>
                 </tr>
 

@@ -1,11 +1,16 @@
 import django.shortcuts
-from api.models import Miners, Heartbeat
+from api.models import Miners, Heartbeat, Miner_status
 
 
 def index(request):
     all_miners = Miners.objects.all()
+    miner_status = Miner_status.objects.all()
+    heartbeat = Heartbeat.objects.all()
+
     context = {
         'all_miners': all_miners,
+        'miner_status': Miner_status,
+        'heartbeat': Heartbeat
 
                 }
     return django.shortcuts.render(request, 'webinterface/index.html', context)
