@@ -25,7 +25,7 @@ class Miners(models.Model):
 class Heartbeat(models.Model):
     key = models.AutoField(primary_key=True)
     id = models.ForeignKey(Miners, to_field='id', on_delete=models.CASCADE)
-    time = models.DateTimeField()
+    time = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return str(self.time)

@@ -29,3 +29,17 @@ python3 manage.py runserver
 default user and password for the admin gui
 admin password1234!
 
+
+
+#### extra stuff to include later:
+
+Celery the background task runner needs rabbitmq as a transport backend
+install rabbitmq
+runs on
+http://localhost:15672
+user guest passwd guest
+
+celery background process start:
+
+celery -A rigreset_django worker -l info
+

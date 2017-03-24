@@ -6,4 +6,8 @@ django-bootstrap3
 uuid
 celery
 flower
+django-celery-beat
+django-celery-results
+requests
+
 

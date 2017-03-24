@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'api.apps.ApiConfig',
     'webinterface.apps.WebinterfaceConfig',
+    'django_celery_beat',
+    'django_celery_results',
 
 ]
 
@@ -123,3 +125,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
+CELERY_RESULT_BACKEND = 'django-db'
